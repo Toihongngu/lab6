@@ -19,7 +19,10 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('logout') }}" method="POST" >
+    @auth
+        <a href="{{ route('admin.user') }}" class="btn btn-success">admin</a>
+    @endauth
+    <form action="{{ route('logout') }}" method="POST">
         @csrf
         <button class="btn btn-primary" type="submit">Logout</button>
     </form>

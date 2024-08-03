@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware(['auth', 'cann'])->group(function () {
-    Route::get('admin/users', [AdminUserController::class, 'index']);
+    Route::get('admin/users', [AdminUserController::class, 'index'])->name('admin.user');
     Route::post('admin/users/{user}/toggle', [AdminUserController::class, 'toggleActive']);
 });
 
